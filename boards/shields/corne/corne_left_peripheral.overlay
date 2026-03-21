@@ -16,8 +16,4 @@
         , <&pro_micro 14 GPIO_ACTIVE_HIGH>
         ;
 };
-/ {
-    chosen {
-        zmk,ble = &peripheral;
-    };
-};// vim: filetype=dts fdm=marker:
+// vim: filetype=dts fdm=marker:
