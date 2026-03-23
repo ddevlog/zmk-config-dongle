@@ -97,6 +97,11 @@
             key-positions = <3 4>;
             layers = <0>;
         };
+
+        ALT {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <28 29>;
+        };
     };
 
     behaviors {

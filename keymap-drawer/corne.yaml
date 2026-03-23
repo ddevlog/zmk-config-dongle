@@ -292,8 +292,8 @@ layers:
   - End
   - ⌦
   - Gui+Sft+4
-  - RU COMMA
-  - RU DOT
+  - (LS(ZMK HID USAGE(HID USAGE KEY, HID USAGE KEY KEYBOARD SLASH AND QUESTION MARK)))
+  - ((ZMK HID USAGE(HID USAGE KEY, HID USAGE KEY KEYBOARD SLASH AND QUESTION MARK)))
   - PAGE DOWN
   - '?'
   - ':'
@@ -402,3 +402,5 @@ combos:
 - p: [3, 4]
   k: '&layer_ru'
   l: [EN]
+- p: [28, 29]
+  k: LEFT ALT

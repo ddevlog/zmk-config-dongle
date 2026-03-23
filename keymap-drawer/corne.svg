@@ -416,6 +416,12 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="210" y="18" width="28" height="26" class="combo"/>
 <text x="224" y="32" class="combo tap"><tspan style="font-size: 67%">&amp;layer_ru</tspan></text>
 </g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="266" y="138" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">
+<tspan x="280" dy="-0.6em">LEFT</tspan><tspan x="280" dy="1.2em">ALT</tspan>
+</text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 331)" class="layer-EN_LOWER">
@@ -600,6 +606,12 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-9" y="-9" height="18" width="18.0" class="key tap glyph mdi:apple-keyboard-option"/>
 </g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="266" y="138" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">
+<tspan x="280" dy="-0.6em">LEFT</tspan><tspan x="280" dy="1.2em">ALT</tspan>
+</text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 661)" class="layer-EN_RAISE">
@@ -774,6 +786,12 @@ rect.held, rect.combo.held {
 <g transform="translate(616, 205)" class="key keypos-41">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-9" y="-9" height="18" width="18.0" class="key tap glyph mdi:apple-keyboard-option"/>
+</g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="266" y="138" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">
+<tspan x="280" dy="-0.6em">LEFT</tspan><tspan x="280" dy="1.2em">ALT</tspan>
+</text>
 </g>
 </g>
 </g>
@@ -966,6 +984,12 @@ rect.held, rect.combo.held {
 <text x="0" y="0" class="key tap layer-activator">GAME</text>
 </a><text x="0" y="24" class="key hold">toggle</text>
 </g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="266" y="138" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">
+<tspan x="280" dy="-0.6em">LEFT</tspan><tspan x="280" dy="1.2em">ALT</tspan>
+</text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 1323)" class="layer-COLEMARK">
@@ -1151,6 +1175,12 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="266" y="138" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">
+<tspan x="280" dy="-0.6em">LEFT</tspan><tspan x="280" dy="1.2em">ALT</tspan>
+</text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 1653)" class="layer-GAME">
@@ -1331,6 +1361,12 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="266" y="138" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">
+<tspan x="280" dy="-0.6em">LEFT</tspan><tspan x="280" dy="1.2em">ALT</tspan>
+</text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 1984)" class="layer-RU">
@@ -1510,6 +1546,12 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="210" y="18" width="28" height="26" class="combo"/>
 <text x="224" y="32" class="combo tap"><tspan style="font-size: 67%">&amp;layer_en</tspan></text>
 </g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="266" y="138" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">
+<tspan x="280" dy="-0.6em">LEFT</tspan><tspan x="280" dy="1.2em">ALT</tspan>
+</text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 2315)" class="layer-RU_LOWER">
@@ -1651,13 +1693,13 @@ rect.held, rect.combo.held {
 <g transform="translate(588, 147)" class="key keypos-31">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">RU</tspan><tspan x="0" dy="1.2em">COMMA</tspan>
+<tspan x="0" dy="-1.2em" style="font-size: 86%">(LS(ZMK</tspan><tspan x="0" dy="1.2em" style="font-size: 86%">HID</tspan><tspan x="0" dy="1.2em" style="font-size: 86%">…</tspan>
 </text>
 </g>
 <g transform="translate(644, 140)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">RU</tspan><tspan x="0" dy="1.2em">DOT</tspan>
+<tspan x="0" dy="-1.2em">((ZMK</tspan><tspan x="0" dy="1.2em">HID</tspan><tspan x="0" dy="1.2em">…</tspan>
 </text>
 </g>
 <g transform="translate(700, 147)" class="key keypos-33">
@@ -1697,6 +1739,12 @@ rect.held, rect.combo.held {
 <g transform="translate(616, 205)" class="key keypos-41">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-9" y="-9" height="18" width="18.0" class="key tap glyph mdi:apple-keyboard-option"/>
+</g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="266" y="138" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">
+<tspan x="280" dy="-0.6em">LEFT</tspan><tspan x="280" dy="1.2em">ALT</tspan>
+</text>
 </g>
 </g>
 </g>
@@ -1870,6 +1918,12 @@ rect.held, rect.combo.held {
 <g transform="translate(616, 205)" class="key keypos-41">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-9" y="-9" height="18" width="18.0" class="key tap glyph mdi:apple-keyboard-option"/>
+</g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="266" y="138" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">
+<tspan x="280" dy="-0.6em">LEFT</tspan><tspan x="280" dy="1.2em">ALT</tspan>
+</text>
 </g>
 </g>
 </g>
@@ -2061,6 +2115,12 @@ rect.held, rect.combo.held {
 <a href="#GAME">
 <text x="0" y="0" class="key tap layer-activator">GAME</text>
 </a><text x="0" y="24" class="key hold">toggle</text>
+</g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="266" y="138" width="28" height="26" class="combo"/>
+<text x="280" y="150" class="combo tap">
+<tspan x="280" dy="-0.6em">LEFT</tspan><tspan x="280" dy="1.2em">ALT</tspan>
+</text>
 </g>
 </g>
 </g>
