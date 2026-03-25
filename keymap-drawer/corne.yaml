@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: corne}
 layers:
-  EN: ['[', Q, W, E, R, T, Y, U, I, O, P, ']', ↹, A, S, D, F, G, H, J, K, L, ;, '''', LCMD, Z, X, '&td_copy', '&td_paste', B, N, M, ',', ., '?', '}', '$$mdi:apple-keyboard-control$$',
+  EN: ['[', Q, W, E, R, T, Y, U, I, O, P, ']', ↹, A, S, D, F, G, H, J, K, L, ;, '''', LCMD, Z, X, C, V, B, N, M, ',', ., '?', '}', '$$mdi:apple-keyboard-control$$',
     EN_LOWER, ␣, ⏎, EN_RAISE, LEFT SHIFT]
   EN_LOWER:
   - Esc
@@ -404,3 +404,13 @@ combos:
   l: [EN]
 - p: [28, 29]
   k: LEFT ALT
+  l: [EN, RU]
+- p: [27, 26]
+  k: Gui+C
+  l: [EN, RU]
+- p: [28, 27]
+  k: Gui+V
+  l: [EN, RU]
+- p: [4, 5]
+  k: Esc
+  l: [EN]
