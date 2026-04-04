@@ -510,7 +510,7 @@ layers:
   - F11
   - '&psd'
   - {t: ▽, type: trans}
-  - {t: EN, h: toggle}
+  - {t: W_EN, h: toggle}
   - Reset
   - Boot
   - ''
