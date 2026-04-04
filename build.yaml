@@ -55,7 +55,7 @@
 include:
   ### ProMicro_Dongle START ###
   # nice_nano_v2 dongle
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: corne_dongle_pro_micro
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Dongle\"
     artifact-name: nice_corne_dongle_pro_micro
