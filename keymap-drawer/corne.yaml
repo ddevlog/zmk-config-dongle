@@ -520,6 +520,178 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: GAME, h: toggle}
+  W_RU:
+  - '['
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - ']'
+  - ↹
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - $$mdi:apple-keyboard-control$$
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: ▽, type: trans}
+  - LEFT ALT
+  - W_RU_LOWER
+  - ␣
+  - ENTER
+  - W_RU_RAISE
+  - $$mdi:apple-keyboard-shift$$
+  W_RU_LOWER:
+  - Esc
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Esc
+  - Alt+←
+  - Alt+↑
+  - Alt+→
+  - ENTER
+  - LEFT ARROW
+  - DOWN ARROW
+  - UP ARROW
+  - RIGHT ARROW
+  - ENTER
+  - '|'
+  - '@'
+  - '@'
+  - Home
+  - LEFT SHIFT
+  - End
+  - ⌦
+  - PRINTSCREEN
+  - (LS(ZMK HID USAGE(HID USAGE KEY, HID USAGE KEY KEYBOARD SLASH AND QUESTION MARK)))
+  - ((ZMK HID USAGE(HID USAGE KEY, HID USAGE KEY KEYBOARD SLASH AND QUESTION MARK)))
+  - PAGE DOWN
+  - '?'
+  - ':'
+  - $$mdi:apple-keyboard-command$$
+  - {type: held}
+  - ␣
+  - BACKSPACE
+  - W_RU_CONF
+  - $$mdi:apple-keyboard-option$$
+  W_RU_RAISE:
+  - ''
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - AMPS
+  - '*'
+  - (
+  - )
+  - ''
+  - ''
+  - ↹
+  - (
+  - _
+  - )
+  - {t: ▽, type: trans}
+  - '-'
+  - '='
+  - '['
+  - ']'
+  - \
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Alt+Gui+LEFT ARROW
+  - Alt+Gui+RIGHT ARROW
+  - _
+  - +
+  - '{'
+  - '}'
+  - KP SLASH
+  - ''
+  - $$mdi:apple-keyboard-command$$
+  - W_RU_CONF
+  - ␣
+  - ⏎
+  - {type: held}
+  - $$mdi:apple-keyboard-option$$
+  W_RU_CONF:
+  - Boot
+  - Reset
+  - F1
+  - F2
+  - F3
+  - F4
+  - BT 1
+  - BT 2
+  - {t: ▽, type: trans}
+  - BT CLR
+  - BT CLR ALL
+  - ''
+  - ''
+  - PLAY PAUSE
+  - F5
+  - F6
+  - F7
+  - F8
+  - Out BLE
+  - Out USB
+  - EP TOG
+  - {t: ▽, type: trans}
+  - '&studio_unlock'
+  - ''
+  - VOLUME DOWN
+  - VOLUME UP
+  - F9
+  - F10
+  - F11
+  - F11
+  - '&psd'
+  - {t: ▽, type: trans}
+  - {t: COLEMARK, h: toggle}
+  - Reset
+  - Boot
+  - ''
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: GAME, h: toggle}
 combos:
 - p: [0, 1]
   k: Esc

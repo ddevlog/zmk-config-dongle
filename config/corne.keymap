@@ -67,6 +67,20 @@
 
             label = "EN";
         };
+
+        w_to_en: w_to_en {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 10 &to_en>;
+            label = "W_TO_EN";
+        };
+
+        w_to_ru: w_to_ru {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 14 &to_ru>;
+            label = "W_TO_RU";
+        };
     };
 
     combos {
@@ -323,6 +337,46 @@
 &bootloader        &sys_reset        &kp F1  &kp F2   &kp F3   &kp F4     &bt BT_SEL 0  &bt BT_SEL 1  &trans             &bt BT_CLR  &bt BT_CLR_ALL  &none
 &none              &kp C_PLAY_PAUSE  &kp F5  &kp F6   &kp F7   &kp F8     &out OUT_BLE  &out OUT_USB  &ext_power EP_TOG  &trans      &studio_unlock  &none
 &kp C_VOLUME_DOWN  &kp C_VOLUME_UP   &kp F9  &kp F10  &kp F11  &kp F11    &psd          &trans        &tog 10            &sys_reset  &bootloader     &none
+                                             &trans   &trans   &trans     &trans        &trans        &tog 5
+            >;
+        };
+
+        W_RU {
+            label = "W_RU";
+            bindings = <
+&kp LBKT   &kp Q  &kp W  &kp E         &kp R   &kp T        &kp Y      &kp U   &kp I      &kp O    &kp P     &kp RBKT
+&kp TAB    &kp A  &kp S  &kp D         &kp F   &kp G        &kp H      &kp J   &kp K      &kp L    &kp SEMI  &kp APOS
+&kp LCTRL  &kp Z  &kp X  &kp C         &kp V   &kp B        &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                         &kp LEFT_ALT  &mo 15  &kp SPACE    &kp ENTER  &mo 16  &kp LSHFT
+            >;
+        };
+
+        W_RU_LOWER {
+            label = "W_RU_LOWER";
+            bindings = <
+&kp ESC  &kp N1       &kp N2        &kp N3          &kp N4         &kp N5       &kp N6           &kp N7          &kp N8        &kp N9           &kp N0        &trans
+&trans   &kp ESC      &kp LA(LEFT)  &kp LA(UP)      &kp LA(RIGHT)  &kp ENTER    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp ENTER     &kp PIPE
+&kp AT   &kp AT_SIGN  &kp HOME      &kp LEFT_SHIFT  &kp END        &kp DEL      &kp PRINTSCREEN  &kp RU_COMMA    &kp RU_DOT    &kp PAGE_DOWN    &kp QUESTION  &kp COLON
+                                    &kp LGUI        &trans         &kp SPACE    &kp BACKSPACE    &mo 17          &kp RALT
+            >;
+        };
+
+        W_RU_RAISE {
+            label = "W_RU_RAISE";
+            bindings = <
+&none  &kp EXCL  &kp AT                &kp HASH        &kp DLLR                &kp PRCNT                  &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR      &none
+&none  &kp TAB   &kp LEFT_PARENTHESIS  &kp UNDERSCORE  &kp RIGHT_PARENTHESIS   &trans                     &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH      &none
+&none  &trans    &trans                &trans          &kp LA(LG(LEFT_ARROW))  &kp LA(LG(RIGHT_ARROW))    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp KP_SLASH  &none
+                                       &kp LGUI        &mo 17                  &kp SPACE                  &kp RET    &trans     &kp RALT
+            >;
+        };
+
+        W_RU_CONF {
+            label = "W_RU_CONF";
+            bindings = <
+&bootloader        &sys_reset        &kp F1  &kp F2   &kp F3   &kp F4     &bt BT_SEL 0  &bt BT_SEL 1  &trans             &bt BT_CLR  &bt BT_CLR_ALL  &none
+&none              &kp C_PLAY_PAUSE  &kp F5  &kp F6   &kp F7   &kp F8     &out OUT_BLE  &out OUT_USB  &ext_power EP_TOG  &trans      &studio_unlock  &none
+&kp C_VOLUME_DOWN  &kp C_VOLUME_UP   &kp F9  &kp F10  &kp F11  &kp F11    &psd          &trans        &tog 4             &sys_reset  &bootloader     &none
                                              &trans   &trans   &trans     &trans        &trans        &tog 5
             >;
         };
