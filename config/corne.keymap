@@ -101,14 +101,14 @@
         };
 
         RU_ENG {
-            bindings = <&layer_en>;
+            bindings = <&w_to_en>;
             key-positions = <4 3>;
             layers = <6 14>;
             timeout-ms = <100>;
         };
 
         TO_EN {
-            bindings = <&layer_ru>;
+            bindings = <&w_to_ru>;
             key-positions = <3 4>;
             layers = <0 10>;
             timeout-ms = <100>;

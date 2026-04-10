@@ -700,10 +700,10 @@ combos:
   k: ↹
   l: [EN]
 - p: [4, 3]
-  k: '&layer_en'
+  k: '&w_to_en'
   l: [RU, W_RU]
 - p: [3, 4]
-  k: '&layer_ru'
+  k: '&w_to_ru'
   l: [EN, W_EN]
 - p: [28, 29]
   k: LEFT ALT
