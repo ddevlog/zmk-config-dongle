@@ -389,8 +389,8 @@ layers:
   - {t: ▽, type: trans}
   - {type: held}
   - {t: GAME, h: toggle}
-  W_EN: ['[', Q, W, E, R, T, Y, U, I, O, P, ']', ↹, A, S, D, F, G, H, J, K, L, ;, '''', '$$mdi:apple-keyboard-control$$', Z, X, '&td_copy', '&td_paste', B, N, M,
-    ',', ., '?', '}', LEFT ALT, W_EN_LOWER, ␣, ⏎, W_EN_RAISE, LEFT SHIFT]
+  W_EN: ['[', Q, W, E, R, T, Y, U, I, O, P, ']', ↹, A, S, D, F, G, H, J, K, L, ;, '''', '$$mdi:apple-keyboard-control$$', Z, X, C, V, B, N, M, ',', ., '?', '}', LEFT
+      ALT, W_EN_LOWER, ␣, ⏎, W_EN_RAISE, LEFT SHIFT]
   W_EN_LOWER:
   - Esc
   - '1'
@@ -701,10 +701,10 @@ combos:
   l: [EN]
 - p: [4, 3]
   k: '&layer_en'
-  l: [RU]
+  l: [RU, W_RU]
 - p: [3, 4]
   k: '&layer_ru'
-  l: [EN]
+  l: [EN, W_EN]
 - p: [28, 29]
   k: LEFT ALT
   l: [EN, RU]
@@ -716,4 +716,4 @@ combos:
   l: [EN, RU]
 - p: [4, 5]
   k: Esc
-  l: [EN]
+  l: [EN, W_EN]
