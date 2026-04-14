@@ -118,14 +118,14 @@
             bindings = <&w_to_en>;
             key-positions = <4 3>;
             layers = <6 14>;
-            timeout-ms = <100>;
+            require-prior-idle-ms = <200>;
         };
 
         TO_EN {
             bindings = <&w_to_ru>;
             key-positions = <3 4>;
             layers = <0 10>;
-            timeout-ms = <100>;
+            require-prior-idle-ms = <200>;
         };
 
         ALT {
@@ -151,8 +151,9 @@
         VIMESC {
             bindings = <&kp ESC>;
             key-positions = <4 5>;
-            timeout-ms = <60>;
+            timeout-ms = <0>;
             layers = <0 10>;
+            require-prior-idle-ms = <200>;
         };
     };
 
