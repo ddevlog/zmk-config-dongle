@@ -1,11 +1,10 @@
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 22)>,   // SCL -> P0.22
-                    <NRF_PSEL(SPIM_MOSI, 0, 17)>;  // SDA -> P0.17
+            psels = <NRF_PSEL(SPIM_SCK, 0, 22)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 17)>;
         };
     };
-
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 22)>,
@@ -15,11 +14,9 @@
     };
 };
 
-// ОТКЛЮЧАЕМ I2C0, чтобы не было конфликта с SPI0
+// Отключаем I2C на уровне дерева устройств
 &i2c0 { status = "disabled"; };
-&ssd1306_3c {
-    status = "disabled";
-};
+
 &spi0 {
     compatible = "nordic,nrf-spim";
     status = "okay";
@@ -30,44 +27,38 @@
     mipi_dbi {
         compatible = "zephyr,mipi-dbi-spi";
         status = "okay";
-        dc-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;    // DC -> P0.03
-        reset-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;  // RES -> P0.02
+        dc-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;
+        reset-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
         spi-dev = <&spi0>;
         #address-cells = <1>;
         #size-cells = <0>;
 
-                st7789: st7789@0 {
-                    compatible = "sitronix,st7789v";
-                    reg = <0>;
-                    status = "okay";
-                    mipi-max-frequency = <20000000>;
-                    mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
-
-                    width = <240>;
-                    height = <240>;
-                    x-offset = <0>;
-                    y-offset = <0>;
-
-                    vcom = <0x19>;
-                    gctrl = <0x35>;
-                    vrhs = <0x12>;
-                    vdvs = <0x20>;
-                    mdac = <0x00>;
-                    gamma = <0x01>;
-                    colmod = <0x05>;
-                    lcm = <0x2c>;
-
-                    // Эти параметры точно нужны, судя по предыдущим логам ошибок
-                    porch-param = [0c 0c 00 33 33];
-                    cmd2en-param = [5a 69 02 01];
-                    pwctrl1-param = [a4 a1];
-                    pvgam-param = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
-                    nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
-                    ram-param = [00 f0];
-                    rgb-param = [cd 08 14];
-                    // gains-param УДАЛЕН
-                };
-
+        st7789: st7789@0 {
+            compatible = "sitronix,st7789v";
+            reg = <0>;
+            status = "okay";
+            mipi-max-frequency = <20000000>;
+            mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
+            width = <240>;
+            height = <240>;
+            x-offset = <0>;
+            y-offset = <0>;
+            vcom = <0x19>;
+            gctrl = <0x35>;
+            vrhs = <0x12>;
+            vdvs = <0x20>;
+            mdac = <0x00>;
+            gamma = <0x01>;
+            colmod = <0x05>;
+            lcm = <0x2c>;
+            porch-param = [0c 0c 00 33 33];
+            cmd2en-param = [5a 69 02 01];
+            pwctrl1-param = [a4 a1];
+            pvgam-param = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
+            nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
+            ram-param = [00 f0];
+            rgb-param = [cd 08 14];
+        };
     };
 };
 
