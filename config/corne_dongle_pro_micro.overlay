@@ -14,7 +14,10 @@
         height = <240>;
         x-offset = <0>;
         y-offset = <0>;
-        vcom = <0x20>;                // добавляем обязательное свойство
+        vcom = <0x20>;
+        gctrl = <0x14>;      // Gate control
+        vrhs = <0x0B>;       // VCOM Right shift
+        vdv = <0x20>;        // VDV setting
         // Опционально:
         // rgb-order = <0>;
         // invert-display;
