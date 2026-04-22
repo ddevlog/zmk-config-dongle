@@ -1,30 +1,42 @@
-#include <zephyr/dt-bindings/gpio/gpio.h>
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            psels = <NRF_PSEL(SPIM_SCK, 0, 22)>,   // SCL (P0.22)
+                    <NRF_PSEL(SPIM_MOSI, 0, 17)>;  // SDA (P0.17)
+        };
+    };
+};
 
-&spi3 {
+&spi0 {
+    compatible = "nordic,nrf-spim";
     status = "okay";
-    cs-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
+    
+    // Пин CS (P0.24). Если его нет на экране, удалите эту строку
+    cs-gpios = <&gpio0 24 GPIO_ACTIVE_LOW>; 
 
-    st7789: st7789v@0 {
+    st7789: st7789@0 {
         compatible = "sitronix,st7789v";
         reg = <0>;
-        spi-max-frequency = <4000000>;
-        cmd-data-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;
-        reset-gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
-        backlight-gpios = <&gpio0 10 GPIO_ACTIVE_HIGH>;
-        mipi-mode = "command";
-        write-only;
+        spi-max-frequency = <20000000>; // 20MHz
+        
+        // Укажите ваши пины
+        cmd-data-gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;   // DC (P0.03)
+        reset-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;      // RES (P0.02)
+        
+        // Размеры экрана
         width = <240>;
         height = <284>;
+        
+        // Настройки смещения (зависят от модуля, могут быть 0)
         x-offset = <0>;
-        y-offset = <18>;
-        colmod = <0x05>;
-        mdac = <0x00>;
-        // остальные параметры драйвер возьмёт по умолчанию
+        y-offset = <0>;
     };
 };
 
 / {
     chosen {
-        zmk,display = &st7789;
+        zephyr,display = &st7789;
     };
 };
