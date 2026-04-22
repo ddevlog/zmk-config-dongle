@@ -35,36 +35,36 @@
         #size-cells = <0>;
 
         st7789: st7789@0 {
-            compatible = "sitronix,st7789v";
-            reg = <0>;
-            status = "okay";
-            mipi-max-frequency = <20000000>;
-            mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
+                    compatible = "sitronix,st7789v";
+                    reg = <0>;
+                    status = "okay";
+                    mipi-max-frequency = <20000000>;
+                    mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
 
-            width = <240>;
-            height = <284>; // Обратите внимание: точно 284? Обычно 240 или 320.
-            x-offset = <0>;
-            y-offset = <0>;
+                    width = <240>;
+                    height = <280>; // Установил 240 для стандарта, проверьте свой экран
+                    x-offset = <0>;
+                    y-offset = <0>;
 
-            vcom = <0x19>;
-            gctrl = <0x35>;
-            vrhs = <0x12>;
-            vdvs = <0x20>;
-            mdac = <0x00>;
-            gamma = <0x01>;
-            colmod = <0x05>;
-            lcm = <0x2c>;
-            porch-param = [0c 0c 00 33 33];
+                    vcom = <0x19>;
+                    gctrl = <0x35>;
+                    vrhs = <0x12>;
+                    vdvs = <0x20>;
+                    mdac = <0x00>;
+                    gamma = <0x01>;
+                    colmod = <0x05>;
+                    lcm = <0x2c>;
 
-            // Исправленное название свойства:
-            cmd2en-ctlr = [5a 69 02 01];
-
-            pwctrl1-param = [a4 a1];
-            pvgam-param = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
-            nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
-            ram-param = [00 f0];
-            rgb-param = [cd 08 14];
-        };
+                    // Свойства с суффиксом -param, как требует ваш компилятор:
+                    porch-param = [0c 0c 00 33 33];
+                    cmd2en-param = [5a 69 02 01];      // Вернули имя из ошибки
+                    pwctrl1-param = [a4 a1];
+                    pvgam-param = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
+                    nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
+                    ram-param = [00 f0];
+                    rgb-param = [cd 08 14];
+                    gains-param = [00];                // Добавили на всякий случай
+                };
     };
 };
 
