@@ -47,3 +47,25 @@
         zmk,display = &st7789;
     };
 };
+
+/ {
+    /* Определяем фиктивный ШИМ-контроллер */
+    pwmleds {
+        compatible = "pwm-leds";
+        pwm_led: pwm_led {
+            pwms = <&pwm0 0 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
+        };
+    };
+
+    /* Определяем фиктивный источник ШИМ-сигнала */
+    pwm0: pwm {
+        compatible = "pwm-generic";
+        #pwm-cells = <2>;
+        status = "okay";
+    };
+};
+
+/* Сообщаем системе, что 'pwm-leds' готов к использованию */
+&pwm_led {
+    status = "okay";
+};
