@@ -30,7 +30,7 @@
     // CS на P1.06 (пин 38)
     cs-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
 
-    st7789_custom: st7789@0 {
+    st7789: st7789@0 {
         compatible = "sitronix,st7789v";
         label = "DISPLAY";
         reg = <0>;
@@ -67,6 +67,6 @@
 
 / {
     chosen {
-        zephyr,display = &st7789_custom;
+        zephyr,display = &st7789;
     };
 };
