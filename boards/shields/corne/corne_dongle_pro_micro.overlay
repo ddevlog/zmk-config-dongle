@@ -69,12 +69,12 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &dummy_transform;
-        /* Указываем на физическую раскладку */
-        zmk,physical-layout = &physical_layout0;
+        /* Эта строка лечит ошибку physical_layouts.c */
+        zmk,physical-layout = &phys_layout;
     };
 
-    /* Новая часть, которую требует ZMK Studio / Physical Layouts */
-    physical_layout0: physical_layout_0 {
+    /* Виртуальная раскладка */
+    phys_layout: phys_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
         transform = <&dummy_transform>;
