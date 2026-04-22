@@ -1,7 +1,9 @@
+/* 1. Исправляем конфликт с фантомным узлом из щита Corne */
 &spi3 {
     status = "disabled";
 };
 
+/* 2. Настраиваем ваш дисплей на spi0 */
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -18,55 +20,37 @@
     };
 };
 
-&i2c0 { status = "disabled"; };
-
 &spi0 {
-    compatible = "nordic,nrf-spim";
     status = "okay";
+    compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
+    cs-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>; // CS на P1.06
 
-    // CS на P1.06 (пин 38)
-    cs-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
-
+    /* Метка ДОЛЖНА быть st7789, так как её ищет /chosen */
     st7789: st7789@0 {
         compatible = "sitronix,st7789v";
-        label = "DISPLAY";
         reg = <0>;
-        spi-max-frequency = <8000000>; // Снижаем для надежности
-
-        // ВНИМАНИЕ: Если не сработает HIGH, попробуйте изменить на LOW в DC
-        cmd-data-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;
-        reset-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
-
+        spi-max-frequency = <8000000>;
+        cmd-data-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>; 
+        reset-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;    
         width = <240>;
         height = <240>;
         x-offset = <0>;
         y-offset = <0>;
-
         vcom = <0x19>;
         gctrl = <0x35>;
-        vrhs = <0x12>;
-        vdvs = <0x20>;
-        mdac = <0x00>;
+        mdac = <0x00>; 
         gamma = <0x01>;
         colmod = <0x05>;
         lcm = <0x2c>;
-
-        // Обязательные параметры для новых ревизий драйверов
-        porch-param = [0c 0c 00 33 33];
-        cmd2en-param = [5a 69 02 01];
-        pwctrl1-param = [a4 a1];
-        pvgam-param = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
-        nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
-        ram-param = [00 f0];
-        rgb-param = [cd 08 14];
     };
 };
 
 / {
     chosen {
+        /* Эта ссылка должна точно совпадать с меткой st7789: выше */
         zephyr,display = &st7789;
     };
 };
