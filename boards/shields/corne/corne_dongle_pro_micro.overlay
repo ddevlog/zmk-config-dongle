@@ -67,24 +67,31 @@
 
 / {
     chosen {
-        zephyr,display = &st7789;
-        /* Эти две строки «чинят» ошибки из твоего последнего лога */
         zmk,kscan = &mock_kscan;
-        zmk,matrix_transform = &default_transform;
+        zmk,matrix-transform = &dummy_transform;
+        /* Указываем на физическую раскладку */
+        zmk,physical-layout = &physical_layout0;
     };
 
-    default_transform: matrix_transform {
+    /* Новая часть, которую требует ZMK Studio / Physical Layouts */
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        transform = <&dummy_transform>;
+        kscan = <&mock_kscan>;
+    };
+
+    dummy_transform: matrix_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <1>;
         rows = <1>;
         map = <RC(0,0)>;
     };
 
-    mock_kscan: kscan {
+    mock_kscan: kscan_0 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
         events = <0>;
     };
 };
-
