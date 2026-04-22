@@ -18,21 +18,20 @@
 &i2c0 { status = "disabled"; };
 
 &spi0 {
-    compatible = "nordic,nrf-spim";
     status = "okay";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
+       pinctrl-0 = <&spi0_default>;
+       pinctrl-1 = <&spi0_sleep>;
+       pinctrl-names = "default", "sleep";
+       cs-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>; // Тот самый CS на P1.06 (пин 38)
 
-    mipi_dbi {
-        compatible = "zephyr,mipi-dbi-spi";
-        status = "okay";
-        dc-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;
-        reset-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
-        spi-dev = <&spi0>;
-        #address-cells = <1>;
-        #size-cells = <0>;
+       mipi_dbi {
+           compatible = "zephyr,mipi-dbi-spi";
+           status = "okay";
+           spi-dev = <&spi0>;
+           dc-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;   // Проверьте эти пины!
+           reset-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>; // Проверьте эти пины!
+           #address-cells = <1>;
+           #size-cells = <0>;
 
         st7789: st7789@0 {
             compatible = "sitronix,st7789v";
