@@ -31,8 +31,8 @@ manifest:
 #    - name: zmk-oled-adapter
 #      remote: mctechnology17
 #      revision: main
-    - name: zmk-dongle-screen
-      remote: janpfischer
-      revision: 0.0.3
+#    - name: zmk-dongle-screen
+#      remote: janpfischer
+#      revision: 0.0.3
   self:
     path: config
