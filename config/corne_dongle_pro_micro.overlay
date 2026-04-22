@@ -37,7 +37,7 @@
                     reg = <0>;
                     status = "okay";
                     mipi-max-frequency = <20000000>;
-                    mipi-mode = "MIPIDBI_MODE_SPI4";
+                    mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
 
                     width = <240>;
                     height = <284>;
