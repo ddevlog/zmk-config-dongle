@@ -1,0 +1,7 @@
+&spi3 {
+    status = "disabled";
+};
+
+/ {
+    /delete-node/ st7789v@0;
+};
