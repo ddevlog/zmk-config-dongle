@@ -1,0 +1,49 @@
+&spi3 {
+    status = "okay";
+    cs-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
+
+    st7789: st7789v@0 {
+        compatible = "sitronix,st7789v";
+        reg = <0>;
+        spi-max-frequency = <20000000>;
+        cmd-data-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;
+        reset-gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
+
+        // === ОСНОВНЫЕ НАСТРОЙКИ ДЛЯ 240x284 ===
+        width = <240>;                // Ширина остается 240
+        height = <284>;               // Высота меняем на 284
+
+        // === НАСТРОЙКИ СМЕЩЕНИЯ (ОБЯЗАТЕЛЬНО!) ===
+        // Буфер ST7789 имеет размер 240x320. Наш экран 240x284.
+        // Чтобы изображение оказалось по центру, смещаем его вниз на 18 пикселей.
+        x-offset = <0>;               // Смещение по горизонтали
+        y-offset = <18>;              // Смещение по вертикали: (320 - 284) / 2 = 18
+
+        // Остальные параметры оставляем без изменений
+        vcom = <0x20>;
+        gctrl = <0x14>;
+        vrhs = <0x0B>;
+        vdv = <0x20>;
+        mdac = <0x00>;
+        colmod = <0x05>;
+        lcm = <0x2C>;
+        gamma = <0x01>;
+        pctla = <0x00>;
+        pctlb = <0x00>;
+        pctlc = <0x00>;
+        pctld = <0x00>;
+        vcomd = <0x00>;
+        vcmpoff = <0x00>;
+        vcompon = <0x00>;
+        porch-param = [0c 0c 00 33 33];
+        pwctrl1-param = [a4 a1];
+        // rgb-order = <0>;
+        // invert-display;
+    };
+};
+
+/ {
+    chosen {
+        zmk,display = &st7789;
+    };
+};
