@@ -32,20 +32,19 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        st7789: st7789@0 {
+                st7789: st7789@0 {
                     compatible = "sitronix,st7789v";
                     reg = <0>;
                     status = "okay";
                     mipi-max-frequency = <20000000>;
                     mipi-mode = "MIPIDBI_MODE_SPI4";
+
                     width = <240>;
                     height = <284>;
-
-                    // ДОБАВЬТЕ ЭТИ СТРОКИ:
                     x-offset = <0>;
                     y-offset = <0>;
 
-                    // Также часто требуются эти параметры для ST7789:
+                    // Эти названия свойств критичны для Zephyr 4.1.0
                     vcom = <0x19>;
                     gctrl = <0x35>;
                     vrhs = <0x12>;
@@ -54,11 +53,14 @@
                     gamma = <0x01>;
                     colmod = <0x05>;
                     lcm = <0x2c>;
-                    porch = [0c 0c 00 33 33];
+                    porch-param = [0c 0c 00 33 33];
                     cmd2en-ctlr = [5a 69 02 01];
-                    pwctrl1 = [a4 a1];
-                    pvgamctrl = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
-                    nvgamctrl = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
+                    pwctrl1-param = [a4 a1];
+                    pvgam-param = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
+                    nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
+                    ram-param = [00 f0];
+                    rgb-param = [cd 08 14];
                 };
+
     };
 };
