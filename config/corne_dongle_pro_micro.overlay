@@ -26,7 +26,7 @@
     // CS на P1.06
     cs-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
 
-    lcd: st7789@0 {
+    st7789: st7789@0 {
         compatible = "sitronix,st7789v";
         label = "DISPLAY";
         reg = <0>;
@@ -55,6 +55,6 @@
 
 / {
     chosen {
-        zephyr,display = &lcd;
+        zephyr,display = &st7789;
     };
 };
