@@ -74,4 +74,4 @@ include:
     shield: corne_dongle_pro_micro dongle_screen
     cmake-args: -DZEPHYR_STRICT_KCONFIG=OFF -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Dongle_O\"
     artifact-name: nice_corne_zmk-dongle-screen
-    snippet: zmk-usb-logging
+#    snippet: zmk-usb-logging
