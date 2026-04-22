@@ -33,7 +33,7 @@
            #address-cells = <1>;
            #size-cells = <0>;
 
-        st7789: st7789@0 {
+          lcd: st7789@0 {  {
             compatible = "sitronix,st7789v";
             reg = <0>;
             status = "okay";
@@ -64,6 +64,6 @@
 
 / {
     chosen {
-        zephyr,display = &st7789;
+        zephyr,display = &lcd;
     };
 };
