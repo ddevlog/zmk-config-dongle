@@ -65,18 +65,18 @@
     };
 };
 
+
 / {
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &dummy_transform;
-        /* Эта строка лечит ошибку physical_layouts.c */
-        zmk,physical-layout = &phys_layout;
+        /* Указываем виртуальную раскладку для прохождения проверки */
+        zmk,physical-layout = &phys_layout0;
     };
 
-    /* Виртуальная раскладка */
-    phys_layout: phys_layout {
+    phys_layout0: phys_layout_0 {
         compatible = "zmk,physical-layout";
-        display-name = "Default Layout";
+        display-name = "Default";
         transform = <&dummy_transform>;
         kscan = <&mock_kscan>;
     };
