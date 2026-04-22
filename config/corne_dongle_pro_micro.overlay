@@ -14,6 +14,7 @@
     };
 };
 
+// Полностью освобождаем ресурсы SPI0
 &i2c0 { status = "disabled"; };
 
 &spi0 {
@@ -23,7 +24,7 @@
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
 
-    // CS на P1.06
+    // CS на P1.06 (пин 38)
     cs-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
 
     st7789: st7789@0 {
@@ -32,16 +33,16 @@
         reg = <0>;
         spi-max-frequency = <20000000>;
 
-        // В версии v0.3 пины DC и RESET указываются здесь:
-        cmd-data-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>; // DC
-        reset-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;    // RES
+        // Пины управления
+        cmd-data-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>; // DC -> P0.03
+        reset-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;    // RES -> P0.02
 
         width = <240>;
         height = <240>;
         x-offset = <0>;
         y-offset = <0>;
 
-        // Базовая инициализация для v0.3
+        // Эти параметры ОБЯЗАТЕЛЬНЫ для прохождения проверки porch-param
         vcom = <0x19>;
         gctrl = <0x35>;
         vrhs = <0x12>;
@@ -50,6 +51,15 @@
         gamma = <0x01>;
         colmod = <0x05>;
         lcm = <0x2c>;
+
+        // Расширенные параметры инициализации (решают вашу ошибку)
+        porch-param = [0c 0c 00 33 33];
+        cmd2en-param = [5a 69 02 01];
+        pwctrl1-param = [a4 a1];
+        pvgam-param = [d0 04 0d 11 13 2b 3f 54 4c 18 0d 0b 1f 23];
+        nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
+        ram-param = [00 f0];
+        rgb-param = [cd 08 14];
     };
 };
 
