@@ -60,30 +60,27 @@
 
     st7789: st7789@0 {
         compatible = "sitronix,st7789v";
-        label = "DISPLAY";
         reg = <0>;
         spi-max-frequency = <20000000>;
-
-        // Пины управления
-        cmd-data-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>; // DC -> P0.03
-        reset-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;    // RES -> P0.02
-
+        cmd-data-gpios = <&gpio0 3 GPIO_ACTIVE_HIGH>;
+        reset-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
         width = <240>;
         height = <240>;
         x-offset = <0>;
         y-offset = <0>;
 
-        // Эти параметры ОБЯЗАТЕЛЬНЫ для прохождения проверки porch-param
         vcom = <0x19>;
         gctrl = <0x35>;
         vrhs = <0x12>;
         vdvs = <0x20>;
+
+        // MDAC управляет направлением и инверсией.
+        // 0x00 - стандарт, 0x08 - BGR, 0xA0 - разворот на 90 градусов и т.д.
         mdac = <0x00>;
+
         gamma = <0x01>;
         colmod = <0x05>;
         lcm = <0x2c>;
-
-        // Расширенные параметры инициализации (решают вашу ошибку)
         porch-param = [0c 0c 00 33 33];
         cmd2en-param = [5a 69 02 01];
         pwctrl1-param = [a4 a1];
@@ -91,7 +88,6 @@
         nvgam-param = [d0 04 0c 11 13 2c 3f 44 51 2f 1f 1f 20 23];
         ram-param = [00 f0];
         rgb-param = [cd 08 14];
-        inversion-on;
     };
 };
 
