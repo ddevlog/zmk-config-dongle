@@ -1,3 +1,23 @@
+/ {
+    // Создаем виртуальный узел, который ищет драйвер brightness.c
+    pwm_leds {
+        compatible = "pwm-leds";
+        status = "okay";
+        pwm_led_0 {
+            pwms = <&pwm0 0 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
+            label = "Backlight PWM";
+        };
+    };
+};
+
+// Настраиваем саму периферию PWM (обычно конфликтует с I2C, который мы уже отключили)
+&pwm0 {
+    status = "okay";
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-1 = <&pwm0_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -9,6 +29,17 @@
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 22)>,
                     <NRF_PSEL(SPIM_MOSI, 0, 17)>;
+            low-power-enable;
+        };
+    };
+    pwm0_default: pwm0_default {
+            group1 {
+                psels = <NRF_PSEL(PWM_OUT0, 0, 5)>; // Используем P0.05 как пример пина BLK
+            };
+        };
+    pwm0_sleep: pwm0_sleep {
+        group1 {
+            psels = <NRF_PSEL(PWM_OUT0, 0, 5)>;
             low-power-enable;
         };
     };
