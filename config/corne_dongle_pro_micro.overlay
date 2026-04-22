@@ -1,33 +1,22 @@
-&pinctrl {
-    i2c0_default: i2c0_default {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 1, 4)>, <NRF_PSEL(TWIM_SCL, 1, 6)>;
-            bias-pull-up;   /* включает внутренние резисторы */
-        };
-    };
-    i2c0_sleep: i2c0_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 1, 4)>, <NRF_PSEL(TWIM_SCL, 1, 6)>;
-            low-power-enable;
-        };
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
+&spi3 {
+    status = "okay";
+    cs-gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
+
+    st7789: st7789v@0 {
+        compatible = "sitronix,st7789v";
+        reg = <0>;
+        spi-max-frequency = <20000000>;
+        cmd-data-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;
+        reset-gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
+        width = <240>;
+        height = <240>;
     };
 };
 
-&pro_micro_i2c {
-    status = "okay";
-
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <64>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;
-        segment-remap;
-        com-invdir;
-        inversion-on;
-        prechargep = <0x22>;
+/ {
+    chosen {
+        zmk,display = &st7789;
     };
 };
