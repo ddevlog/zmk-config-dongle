@@ -16,9 +16,9 @@ manifest:
       revision: v0.3.0
       import: app/west.yml
     # dongle_display
-#    - name: zmk-dongle-display
-#      remote: englmaxi
-#      revision: v0.3
+    - name: zmk-dongle-display
+      remote: englmaxi
+      revision: v0.3
     # nice_oled - nice_epaper
 #    - name: zmk-nice-oled
 #      remote: mctechnology17
@@ -31,8 +31,8 @@ manifest:
 #    - name: zmk-oled-adapter
 #      remote: mctechnology17
 #      revision: main
-    - name: zmk-dongle-screen
-      remote: janpfischer
-      revision: 0.0.3
+#    - name: zmk-dongle-screen
+#      remote: janpfischer
+#      revision: 0.0.3
   self:
     path: config
