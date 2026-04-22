@@ -1,4 +1,6 @@
 /* 1. Отключаем конфликтный SPI3 из стандартного шилда */
+/* ДОБАВЬТЕ ЭТУ СТРОКУ В САМЫЙ ВЕРХ ФАЙЛА */
+#include <dt-bindings/zmk/matrix_transform.h>
 &spi3 {
     status = "disabled";
 };
