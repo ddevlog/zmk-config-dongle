@@ -17,7 +17,6 @@
 
 // ОТКЛЮЧАЕМ I2C0, чтобы не было конфликта с SPI0
 &i2c0 { status = "disabled"; };
-&twi0 { status = "disabled"; };
 
 &spi0 {
     compatible = "nordic,nrf-spim";
