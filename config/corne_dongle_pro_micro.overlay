@@ -10,17 +10,24 @@
         spi-max-frequency = <20000000>;
         cmd-data-gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;
         reset-gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
+
         width = <240>;
         height = <240>;
         x-offset = <0>;
         y-offset = <0>;
         vcom = <0x20>;
-        gctrl = <0x14>;      // Gate control
-        vrhs = <0x0B>;       // VCOM Right shift
-        vdv = <0x20>;        // VDV setting
-        // Опционально:
-        // rgb-order = <0>;
-        // invert-display;
+        gctrl = <0x14>;
+        vrhs = <0x0B>;
+        vdv = <0x20>;
+        mdac = <0x00>;       // Добавленный параметр
+        colmod = <0x05>;     // Формат цвета RGB565
+        lcm = <0x2C>;        // Инверсия кадров
+
+        // Опциональные параметры для стабильности
+        porch-param = [0c 0c 00 33 33];
+        pwctrl1-param = [a4 a1];
+        //rgb-order = <0>;
+        //invert-display;
     };
 };
 
