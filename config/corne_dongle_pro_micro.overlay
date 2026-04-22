@@ -17,7 +17,9 @@
 
 // ОТКЛЮЧАЕМ I2C0, чтобы не было конфликта с SPI0
 &i2c0 { status = "disabled"; };
-
+&ssd1306_3c {
+    status = "disabled";
+};
 &spi0 {
     compatible = "nordic,nrf-spim";
     status = "okay";
