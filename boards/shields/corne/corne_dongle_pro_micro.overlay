@@ -184,7 +184,7 @@ RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10
     st7789v@0 {
         width = <240>;
         height = <240>;
-        x-offset = <0>;
+        x-offset = <20>;
         y-offset = <44>;
     };
 };
