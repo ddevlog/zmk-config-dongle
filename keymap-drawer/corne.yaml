@@ -390,8 +390,8 @@ layers:
   - {type: held}
   - {t: GAME, h: toggle}
   W_EN: ['[', Q, W, E, R, T, Y, U, I, O, P, ']', ↹, A, S, D, F, G, H, J, K, L, ;, '''', '$$mdi:apple-keyboard-control$$', Z, X, C, V, B, N, M, ',', ., '?', '}', LEFT
-      ALT, W_EN_LOWER, ␣, ⏎, W_EN_RAISE, LEFT SHIFT]
-  W_EN_LOWER:
+      ALT, W_EN_LOW, ␣, ⏎, W_EN_RAISE, LEFT SHIFT]
+  W_EN_LOW:
   - Esc
   - '1'
   - '2'
@@ -558,12 +558,12 @@ layers:
   - /
   - {t: ▽, type: trans}
   - LEFT ALT
-  - W_RU_LOWER
+  - W_RU_LOW
   - ␣
   - ENTER
   - W_RU_RAISE
   - $$mdi:apple-keyboard-shift$$
-  W_RU_LOWER:
+  W_RU_LOW:
   - Esc
   - '1'
   - '2'
